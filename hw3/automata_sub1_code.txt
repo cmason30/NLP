@@ -1,0 +1,33 @@
+digraph finite_state_machine {
+	rankdir=LR;
+	rank=same;
+	label     = "A finite state automaton that decides whether a sequence of inputs contains the phrase 'MONO.'"
+	size="15,5"
+	node[shape=doublecircle, width=1];4;
+	node [shape = circle];
+	
+	1 -> 2 [label = "O"];
+	2 -> 3 [label = "N"];
+	3 -> 4 [label = "O"];
+	n0 -> 0 [label="Start"];
+	
+	0 -> 0 [label = "&#x2260;M"];
+	0 -> 1 [label = "M"];
+	1 -> 0 [label = "&#8713;{M,O}"];
+	1 -> 1 [label = "M"];
+
+	2 -> 1 [label = "M"];
+	2 -> 0 [label = "&#8713;{M,N}"];
+	3 -> 0 [label = "&#8713;{M,O}"];
+	3 -> 1 [label = "M"];
+	{ rank = min; 4; }
+	{ rank = sink; 0}
+
+
+	4 -> 4 [label = "&#8712;{Any Character}"];
+
+	
+	n0 [label= "", shape=none,height=.0,width=.0]
+
+    
+}
