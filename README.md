@@ -1,1 +1,1 @@
-# LING-581-nlp
+# Implementation of NLP Theory and Technologies
